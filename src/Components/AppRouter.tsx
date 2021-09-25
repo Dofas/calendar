@@ -4,7 +4,7 @@ import { useTypedSelector } from "../Hooks/useTypedSelector";
 import { privateRoutes, publicRoutes, RouteNames } from "../router";
 
 const AppRouter = () => {
-  const {isAuth} = useTypedSelector(state => state.auth)
+  const { isAuth } = useTypedSelector((state) => state.auth);
   return isAuth ? (
     <Switch>
       {privateRoutes.map((route) => (
@@ -12,20 +12,20 @@ const AppRouter = () => {
           path={route.path}
           exact={route.exact}
           component={route.component}
-          key = {route.path}
+          key={route.path}
         />
       ))}
       <Redirect to={RouteNames.EVENT} />
     </Switch>
   ) : (
     <Switch>
-        {publicRoutes.map((route) => (
+      {publicRoutes.map((route) => (
         <Route
-        path={route.path}
-        exact={route.exact}
-        component={route.component}
-        key = {route.path}
-      />
+          path={route.path}
+          exact={route.exact}
+          component={route.component}
+          key={route.path}
+        />
       ))}
       <Redirect to={RouteNames.LOGIN} />
     </Switch>

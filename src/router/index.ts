@@ -3,20 +3,20 @@ import Login from "../Pages/Login";
 import Event from "../Pages/Event";
 
 export interface IRoute {
-    path: string,
-    component: React.ComponentType,
-    exact?: boolean
+  path: string;
+  component: React.ComponentType;
+  exact?: boolean;
 }
 
 export enum RouteNames {
-    LOGIN='/login',
-    EVENT= '/'
+  LOGIN = "/login",
+  EVENT = "/",
 }
 
 export const publicRoutes: IRoute[] = [
-    {path: RouteNames.LOGIN, exact: true, component: Login}
-]
+  { path: RouteNames.LOGIN, exact: true, component: Login },
+];
 
 export const privateRoutes: IRoute[] = [
-    {path: RouteNames.EVENT, exact: true, component: Event}
-]
+  { path: RouteNames.EVENT, exact: true, component: Event },
+];
